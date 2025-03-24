@@ -5,16 +5,16 @@
     "description": "Launcher Mincraft pour le serveur ByYourLife",
     "main": "src/app.js",
     "author": {
-        "name": "Hildorer",
+        "name": "Hildorer, ByYourLife.",
         "email": "contact.byyourlife@byyourlife.fr",
         "url": "https://github.com/hildoreriv"
     },
-    "url": "https://byyourlife.fr/launcher",
+    "url": "http://byyourlife.fr/launcher",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
         "build": "node build.js --obf=true --build=platform",
-        "icon": "node build.js --icon=https://raw.githubusercontent.com/luuxis/Selvania-Launcher/master/src/assets/images/icon.png"
+        "icon": "node build.js --icon=https://raw.githubusercontent.com/ByYourLife/ByYourLife-Launcher/master/src/assets/images/icon.png"
     },
     "license": "CCANC",
     "nodemonConfig": {
