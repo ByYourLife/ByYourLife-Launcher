@@ -100,7 +100,6 @@ async function accountSelect(data) {
 
     if (activeAccount) activeAccount.classList.toggle("account-select");
     account.classList.add("account-select");
-    console.log(data);
     if (data?.profile?.skins[0]?.base64)
         headplayer(data.profile.skins[0].base64);
     if (data?.name) playerName(data.name);
