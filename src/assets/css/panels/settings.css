@@ -29,6 +29,11 @@
 .nav-box #save {
     border: solid 4px var(--background-element);
     margin: 3rem;
+    transition: all 0.7s ease;
+}
+
+#save:hover {
+    border-color: var(--hover-element-color);
 }
 
 .nav-settings-btn {
@@ -137,6 +142,8 @@
     margin: 1rem;
     border-radius: 15px;
     cursor: pointer;
+    opacity: 0.9;
+    transition: all 0.7s ease;
 }
 
 .account-select {
@@ -152,6 +159,10 @@
 .accounts-list #add {
     justify-content: center;
     cursor: pointer;
+}
+
+#add:hover {
+    opacity: 1;
 }
 
 .add-profile {
