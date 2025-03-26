@@ -1,7 +1,7 @@
 {
     "name": "byyourlife-launcher",
     "preductname": "ByYourLife Launcher",
-    "version": "2.0.11",
+    "version": "2.1.0",
     "description": "Launcher Mincraft pour le serveur ByYourLife",
     "main": "src/app.js",
     "author": {
