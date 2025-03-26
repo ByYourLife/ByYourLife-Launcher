@@ -244,8 +244,11 @@ class Home {
 
     refreshStatus(instance, instanceSelect) {
         setInterval(() => {
-            if (instance.name === instanceSelect) setStatus(instance.status);
-        }, 10000);
+            if (instance.name === instanceSelect) {
+                setStatus(instance.status);
+                console.info("Server refreshed");
+            }
+        }, 30000);
     }
 
     async startGame() {
