@@ -2,10 +2,10 @@
     "name": "byyourlife-launcher",
     "preductname": "ByYourLife Launcher",
     "version": "2.1.0",
-    "description": "Launcher Mincraft pour le serveur ByYourLife",
+    "description": "Launcher officiel du serveur ByYourLife.",
     "main": "src/app.js",
     "author": {
-        "name": "Hildorer, ByYourLife.",
+        "name": "Hildorer, SaurFort, ByYourLife.",
         "email": "contact.byyourlife@byyourlife.fr",
         "url": "https://github.com/hildoreriv"
     },
