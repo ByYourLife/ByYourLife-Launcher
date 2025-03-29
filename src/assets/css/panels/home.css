@@ -228,6 +228,7 @@
     border-radius: 15px;
     height: 3rem;
     margin: 0 1.5rem;
+    gap: 8px;
 }
 
 .player-head {
@@ -239,6 +240,10 @@
     width: 3rem;
     pointer-events: none;
     border-radius: 15px;
+}
+
+.player-name {
+    font-size: 1.1rem;
 }
 
 .player-menu {

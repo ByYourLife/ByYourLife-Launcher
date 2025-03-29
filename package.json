@@ -1,21 +1,20 @@
 {
     "name": "byyourlife-launcher",
     "preductname": "ByYourLife Launcher",
-    "version": "2.0.10",
-    "description": "Launcher Mincraft pour le serveur ByYourLife",
+    "version": "2.1.0",
+    "description": "Launcher officiel du serveur ByYourLife.",
     "main": "src/app.js",
     "author": {
-        "name": "Hildorer, ByYourLife.",
+        "name": "Luuxis, Hildorer, SaurFort, ByYourLife.",
         "email": "contact.byyourlife@byyourlife.fr",
         "url": "https://github.com/hildoreriv"
     },
-    "url": "http://byyourlife.fr/launcher",
+    "url": "http://launcher.byyourlife.fr",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
         "build": "node build.js --obf=true --build=platform",
         "icon": "node build.js --icon=https://raw.githubusercontent.com/ByYourLife/logo/refs/heads/master/icon.png"
-
     },
     "license": "CCANC",
     "nodemonConfig": {
