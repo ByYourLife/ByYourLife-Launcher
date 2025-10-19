@@ -44,7 +44,6 @@ input::-webkit-inner-spin-button {
     height: 26px;
     -webkit-app-region: drag;
     z-index: 11;
-    display: none;
 }
 
 .frame {
@@ -80,6 +79,35 @@ input::-webkit-inner-spin-button {
     height: 14px;
     font-size: 14px;
     color: #f8f9f9;
+}
+
+.darwin-icon-minimize,
+.darwin-icon-maximize,
+.darwin-icon-close {
+    position: relative;
+}
+
+.darwin-icon-minimize:before,
+.darwin-icon-maximize:before,
+.darwin-icon-close:before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+
+.darwin-icon-maximize:before {
+    background: #07d014;
+}
+
+.darwin-icon-minimize:before {
+    background: #ffbd2e;
+}
+
+.darwin-icon-close:before {
+    background: #ff6047;
 }
 
 .icon-close:hover {

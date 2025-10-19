@@ -1,6 +1,6 @@
 /**
  * @author Luuxis
- * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
+ * Luuxis License v1.0 (voir fichier LICENSE pour les détails en FR/EN)
  */
 // import panel
 import Home from "./panels/home.js";
@@ -80,23 +80,25 @@ class Launcher {
         document.querySelector(".frame").classList.toggle("hide");
         document.querySelector(".dragbar").classList.toggle("hide");
 
-        document.querySelector("#minimize").addEventListener("click", () => {
-            ipcRenderer.send("main-window-minimize");
+        document.querySelector(`.${platform} .frame`).classList.toggle('hide')
+
+        document.querySelector(`.${platform} .frame #minimize`).addEventListener('click', () => {
+            ipcRenderer.send('main-window-minimize');
         });
 
         let maximized = false;
-        let maximize = document.querySelector("#maximize");
-        maximize.addEventListener("click", () => {
-            if (maximized) ipcRenderer.send("main-window-maximize");
-            else ipcRenderer.send("main-window-maximize");
-            maximized = !maximized;
-            maximize.classList.toggle("icon-maximize");
-            maximize.classList.toggle("icon-restore-down");
+        let maximize = document.querySelector(`.${platform} .frame #maximize`);
+        maximize.addEventListener('click', () => {
+            if (maximized) ipcRenderer.send('main-window-maximize')
+            else ipcRenderer.send('main-window-maximize');
+            maximized = !maximized
+            maximize.classList.toggle('icon-maximize')
+            maximize.classList.toggle('icon-restore-down')
         });
 
-        document.querySelector("#close").addEventListener("click", () => {
-            ipcRenderer.send("main-window-close");
-        });
+        document.querySelector(`.${platform} .frame #close`).addEventListener('click', () => {
+            ipcRenderer.send('main-window-close');
+        })
     }
 
     async initConfigClient() {
