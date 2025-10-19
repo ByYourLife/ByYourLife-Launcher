@@ -46,10 +46,18 @@ input::-webkit-inner-spin-button {
     z-index: 11;
 }
 
-.frame {
+.darwin .frame {
     background: transparent;
     position: fixed;
-    display: table;
+    top: 0px;
+    z-index: 11;
+    -webkit-app-region: no-drag;
+    display: none;
+}
+
+.other .frame {
+    background: transparent;
+    position: fixed;
     top: 0px;
     right: 0px;
     z-index: 11;
@@ -57,11 +65,19 @@ input::-webkit-inner-spin-button {
     display: none;
 }
 
-.hide {
+.frame.hide {
     display: block;
 }
 
-.button-frame {
+.darwin .button-frame {
+    position: relative;
+    display: table-cell;
+    width: 20px;
+    height: 26px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.other .button-frame {
     position: relative;
     display: table-cell;
     width: 30px;
@@ -90,7 +106,7 @@ input::-webkit-inner-spin-button {
 .darwin-icon-minimize:before,
 .darwin-icon-maximize:before,
 .darwin-icon-close:before {
-    content: '';
+    content: "";
     position: absolute;
     border-radius: 50%;
     width: 12px;

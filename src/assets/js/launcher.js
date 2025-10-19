@@ -3,28 +3,28 @@
  * Luuxis License v1.0 (voir fichier LICENSE pour les détails en FR/EN)
  */
 // import panel
-import Home from "./panels/home.js";
 import Login from "./panels/login.js";
+import Home from "./panels/home.js";
 import Settings from "./panels/settings.js";
 
 // import modules
 import {
-    accountSelect,
-    addAccount,
-    changePanel,
-    config,
-    database,
     logger,
-    pkg,
+    config,
+    changePanel,
+    database,
     popup,
     setBackground,
+    accountSelect,
+    addAccount,
+    pkg,
 } from "./utils.js";
 const { AZauth, Microsoft, Mojang } = require("minecraft-java-core");
 
 // libs
 const { ipcRenderer } = require("electron");
 const fs = require("fs");
-//const os = require('os');
+const os = require("os");
 
 class Launcher {
     async init() {
@@ -32,7 +32,7 @@ class Launcher {
         console.log("Initializing Launcher...");
         this.shortcut();
         await setBackground();
-        if (process.platform === "win32") this.initFrame();
+        this.initFrame();
         this.config = await config
             .GetConfig()
             .then((res) => res)
@@ -77,28 +77,31 @@ class Launcher {
 
     initFrame() {
         console.log("Initializing Frame...");
-        document.querySelector(".frame").classList.toggle("hide");
-        document.querySelector(".dragbar").classList.toggle("hide");
+        const platform = os.platform() === "darwin" ? "darwin" : "other";
 
-        document.querySelector(`.${platform} .frame`).classList.toggle('hide')
+        document.querySelector(`.${platform} .frame`).classList.toggle("hide");
 
-        document.querySelector(`.${platform} .frame #minimize`).addEventListener('click', () => {
-            ipcRenderer.send('main-window-minimize');
-        });
+        document
+            .querySelector(`.${platform} .frame #minimize`)
+            .addEventListener("click", () => {
+                ipcRenderer.send("main-window-minimize");
+            });
 
         let maximized = false;
         let maximize = document.querySelector(`.${platform} .frame #maximize`);
-        maximize.addEventListener('click', () => {
-            if (maximized) ipcRenderer.send('main-window-maximize')
-            else ipcRenderer.send('main-window-maximize');
-            maximized = !maximized
-            maximize.classList.toggle('icon-maximize')
-            maximize.classList.toggle('icon-restore-down')
+        maximize.addEventListener("click", () => {
+            if (maximized) ipcRenderer.send("main-window-maximize");
+            else ipcRenderer.send("main-window-maximize");
+            maximized = !maximized;
+            maximize.classList.toggle("icon-maximize");
+            maximize.classList.toggle("icon-restore-down");
         });
 
-        document.querySelector(`.${platform} .frame #close`).addEventListener('click', () => {
-            ipcRenderer.send('main-window-close');
-        })
+        document
+            .querySelector(`.${platform} .frame #close`)
+            .addEventListener("click", () => {
+                ipcRenderer.send("main-window-close");
+            });
     }
 
     async initConfigClient() {
