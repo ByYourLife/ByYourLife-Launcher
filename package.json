@@ -1,20 +1,20 @@
 {
-    "name": "Selvania-Launcher",
-    "preductname": "Selvania Launcher",
-    "version": "2.1.3",
-    "description": "Launcher Mincraft pour le serveur Selvania",
+    "name": "byyourlife-launcher",
+    "preductname": "ByYourLife Launcher",
+    "version": "2.2.0",
+    "description": "Launcher officiel du serveur ByYourLife.",
     "main": "src/app.js",
     "author": {
-        "name": "luuxis, Inc.",
-        "email": "contact@luuxis.fr",
-        "url": "https://github.com/luuxis"
+        "name": "Luuxis, Hildorer, SaurFort, ByYourLife.",
+        "email": "contact.byyourlife@byyourlife.fr",
+        "url": "https://github.com/hildoreriv"
     },
-    "url": "http://launcher.luuxis.fr",
+    "url": "http://launcher.byyourlife.fr",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
         "build": "node build.js --obf=true --build=platform",
-        "icon": "node build.js --icon=https://raw.githubusercontent.com/luuxis/Selvania-Launcher/master/src/assets/images/icon.png"
+        "icon": "node build.js --icon=https://raw.githubusercontent.com/ByYourLife/logo/refs/heads/master/icon.png"
     },
     "license": "CCANC",
     "nodemonConfig": {
@@ -39,6 +39,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/luuxis/Selvania-Launcher.git"
+        "url": "git+https://github.com/ByYourLife/ByYourLife-Launcher.git"
     }
 }
